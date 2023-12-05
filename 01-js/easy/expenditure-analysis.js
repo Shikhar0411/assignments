@@ -6,7 +6,31 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+  let mapCategoryToAmountSpent = new Map();
+
+  // Creating the required data in a map
+  transactions.forEach( transaction => {
+    let key = transaction.category;
+    let amount = transaction.price
+    if (mapCategoryToAmountSpent.has(key)) {
+      mapCategoryToAmountSpent.set(key, mapCategoryToAmountSpent.get(key) + amount);
+    } else {
+      mapCategoryToAmountSpent.set(key,amount)
+    }
+  })
+
+  let listOfObj = [];
+
+  mapCategoryToAmountSpent.forEach((value, key) => {
+    listOfObj.push(createObject(key, value));
+  })
+  
+  return listOfObj;
+}
+
+function createObject(key, value) {
+  let obj = {"category" : key, "totalSpent" : value};
+  return obj;
 }
 
 module.exports = calculateTotalSpentByCategory;
