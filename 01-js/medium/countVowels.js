@@ -6,6 +6,7 @@
 */
 
 function countVowels(str) {
+    str = str.toLowerCase()
     let vowels = ['a','e','i','o','u']
     let count = 0;
     // Your code here
@@ -14,7 +15,6 @@ function countVowels(str) {
             count++;
         }
     }
-    console.log(count)
     return count
 }
 
