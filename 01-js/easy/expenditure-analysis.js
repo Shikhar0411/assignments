@@ -24,7 +24,7 @@ function calculateTotalSpentByCategory(transactions) {
   mapCategoryToAmountSpent.forEach((value, key) => {
     listOfObj.push(createObject(key, value));
   })
-  
+
   return listOfObj;
 }
 
