@@ -11,6 +11,7 @@ function findLargestElement(numbers) {
         if (numbers[i] > biggestNum) biggestNum = numbers[i];
     }
     return biggestNum;
+    
 }
 
 module.exports = findLargestElement;
